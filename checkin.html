@@ -1,10 +1,13 @@
 <!DOCTYPE HTML>
 <html>
 	<head>
-		<title>Welcome to Danbury Tattoo & Piercing</title>
+		<title>Danbury Tattoo Check-in</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<meta name="description" content="Danbury CT's best Tattoo & Piercing Shop. Danbury Tattoo's staff of artists can help you make your tattoo & piercing dreams reality." />
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/stylesheet.css"/>
+		    <link href="http://twitter.github.com/bootstrap/assets/css/bootstrap-responsive.css" rel="stylesheet">
+
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
@@ -20,10 +23,6 @@
 				 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed',GradientType=0 );
 				 background-repeat: no-repeat;
 				 background-attachment: fixed;*/
-			}
-			.center {
-				text-align: center;
-				padding-top: 22px;
 			}
 			.jumbo {
 				margin-top: 50px;
@@ -100,6 +99,11 @@
 			.social-buttons {
 				margin-top: 25px;
 			}
+			.center{
+				text-align: center;
+			}
+			.span12{margin-bottom:15px;}
+			
 
 		</style>
 		<script type="text/javascript">
@@ -119,68 +123,19 @@
 		</script>
 	</head>
 	<body>
-
-		<div class="center jumbo">
-			<div class="hide">
-				Shop | Artists | Events | Merch
-			</div>
-			<p>
-				<img height="325px" src="assets/img/danbury-tattoo-logo.jpg" />
-			</p>
-			<a class="btn btn-large btn-primary" href="http://eepurl.com/nqPJv" target="_blank"> JOIN OUR MAILING LIST </a>
+		<div class="container center">
+			<h1>Danbury Tattoo Check-In</h1>
 		</div>
-		<div class="center line-top social-buttons">
-			<span class="social-icon"><a href="https://facebook.com/danburytattoo" target="_blank">f</a></span>
-			<span class="social-icon"><a href="https://twitter.com/danburytattoo" target="_blank">l</a></span>
-			<span class="social-icon hide">&</span>
-		</div>
-		<div class="container hide">
+		<div class="container center">
 			<div class="row">
 				<div class="span12">
-					<h1>The Shop</h1>
-
+					<button class="btn btn-large" onclick="openFacebook();"><img src="assets/img/facebook_logo.png" /></button>
 				</div>
-			</div>
-			<div class="row">
-				<div class="span4">
-					<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-				</div>
-				<div class="span8">
-					<p>
-						Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-					</p>
-					<p>
-						The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-					</p>
-					<a href="#" class="btn btn-primary pull-right btn-large">Book an appointment</a>
-				</div>
-			</div>
-			<div class="row hide">
 				<div class="span12">
-					<h1>The Artists</h1>
-
+					<button class="btn btn-large"><img src="assets/img/yelp_logo.png" /></button>
 				</div>
-			</div>
-			<div class="row hide">
 				<div class="span12">
-					<img src="http://placehold.it/250x250">
-					<img src="http://placehold.it/250x250">
-					<img src="http://placehold.it/250x250">
-
-				</div>
-			</div>
-			<div class="row hide">
-				<div class="span12">
-					<h1>Events</h1>
-
-				</div>
-			</div>
-			<div class="row hide">
-				<div class="span12">
-					<img src="http://placehold.it/250x250">
-					<img src="http://placehold.it/250x250">
-					<img src="http://placehold.it/250x250">
-
+					<button class="btn btn-large"><img src="assets/img/foursquare_logo.png"/></button>
 				</div>
 			</div>
 			<div class="row">
@@ -195,19 +150,19 @@
 			</div>
 		</div>
 		<script>
-			if (getParameterByName("show") == 1) {
-				$('.hide').show();
+			function openFacebook(){
+				window.location = "fb://place/390359654346542";
+				setTimeout(function(){
+					window.location = "https://www.facebook.com";
+				}, 300);
 			}
-
-			function getParameterByName(name) {
-				name = name.replace(/[\[]/, "\\\[").replace(/[\]]/, "\\\]");
-				var regexS = "[\\?&]" + name + "=([^&#]*)";
-				var regex = new RegExp(regexS);
-				var results = regex.exec(window.location.search);
-				if (results == null)
-					return "";
-				else
-					return decodeURIComponent(results[1].replace(/\+/g, " "));
+			
+			function openYelp(){
+				
+			}
+			
+			function openFoursquare(){
+				
 			}
 		</script>
 	</body>
