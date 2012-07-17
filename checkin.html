@@ -133,10 +133,10 @@
 					<button class="btn btn-large" onclick="openFacebook();"><img src="assets/img/facebook_logo.png" /></button>
 				</div>
 				<div class="span12">
-					<button class="btn btn-large"><img src="assets/img/yelp_logo.png" /></button>
+					<button class="btn btn-large" onclick="openYelp();"><img src="assets/img/yelp_logo.png" /></button>
 				</div>
 				<div class="span12">
-					<button class="btn btn-large"><img src="assets/img/foursquare_logo.png"/></button>
+					<button class="btn btn-large" onclick="openFoursquare();"><img src="assets/img/foursquare_logo.png"/></button>
 				</div>
 			</div>
 			<div class="row">
@@ -154,15 +154,25 @@
 			function openFacebook(){
 				window.location = "fb://place/390359654346542";
 				setTimeout(function(){
-					window.location = "https://www.facebook.com";
+					window.location = "http://touch.facebook.com/#/place_new.php";
 				}, 300);
 			}
 			
 			function openYelp(){
-				
+				window.location = "yelp4:///check_in/nearby";
+				setTimeout(function(){
+					window.location = "http://www.yelp.com/biz/danbury-tattoo-and-piercing-danbury";
+				}, 300);
 			}
 			
 			function openFoursquare(){
+				window.location = "foursquare://venues/5004cb08011c33f7f6607435";
+				setTimeout(function(){
+					window.location = "http://m.foursquare.com/venue/5004cb08011c33f7f6607435";
+				}, 300);
+			}
+			
+			function isAndroid(){
 				
 			}
 		</script>
