@@ -76,11 +76,14 @@
 				margin-top: 45px;
 				border-bottom: 1px dashed black;
 			}
-			img {
+			.row img {
 				-webkit-border-radius: 10px;
 				-moz-border-radius: 10px;
 				border-radius: 10px;
 				margin-right: 25px;
+				-webkit-box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+				-moz-box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
+				box-shadow: 0px 0px 10px rgba(50, 50, 50, 1);
 			}
 			.line-top {
 				border-top: 1px solid black;
@@ -91,7 +94,7 @@
 			p {
 				font-size: 1.2em;
 				line-height: 1.5em;
-				letter-spacing: -0.07em;
+				letter-spacing: -0.03em;
 			}
 
 			.hide {
@@ -134,7 +137,7 @@
 			<span class="social-icon"><a href="https://twitter.com/danburytattoo" target="_blank">l</a></span>
 			<span class="social-icon hide">&</span>
 		</div>
-		<div class="container hide">
+		<div class="container">
 			<div class="row">
 				<div class="span12">
 					<h1>The Shop</h1>
@@ -142,17 +145,26 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="span4">
-					<iframe width="300" height="300" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A&amp;output=embed"></iframe><br /><small><a href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A" style="color:#0000FF;text-align:left">View Larger Map</a></small>
-				</div>
 				<div class="span8">
-					<p>
-						Your bones don't break, mine do. That's clear. Your cells react to bacteria and viruses differently than mine. You don't get sick, I do. That's also clear. But for some reason, you and I react the exact same way to water. We swallow it too fast, we choke. We get some in our lungs, we drown. However unreal it may seem, we are connected, you and I. We're on the same curve, just on opposite ends.
-					</p>
-					<p>
-						The path of the righteous man is beset on all sides by the iniquities of the selfish and the tyranny of evil men. Blessed is he who, in the name of charity and good will, shepherds the weak through the valley of darkness, for he is truly his brother's keeper and the finder of lost children. And I will strike down upon thee with great vengeance and furious anger those who would attempt to poison and destroy My brothers. And you will know My name is the Lord when I lay My vengeance upon thee.
-					</p>
-					<a href="#" class="btn btn-primary pull-right btn-large">Book an appointment</a>
+					<img src="assets/img/shop_front.jpg"/>
+
+				</div>
+				<div class="span4">
+					<p>Our shop is located in the small group of shops at the intersection of 
+						Germantown road and Shepard Rd, right accross the street from the VA Danbury Clinic.</p>
+					<address>
+						2 Germantown road <br/>
+						Danbury, CT 06810
+					</address>
+					<dl>
+						<dt>Monday - Friday</dt>
+						<dd>10am - 11pm</dd>
+						<dt>Saturday - Sunday</dt>
+						<dd>10am - 9pm</dd>
+					</dl>
+					<p>CALL: 203-628-7779</p>
+					<a class="btn btn-large btn-primary" target="_blank" href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A">Get Directions</a>
+
 				</div>
 			</div>
 			<div class="row hide">
@@ -197,6 +209,10 @@
 		<script>
 			if (getParameterByName("show") == 1) {
 				$('.hide').show();
+			}
+			
+			if (getParameterByName("show") == 2) {
+				$('.hide-2').show();
 			}
 
 			function getParameterByName(name) {
