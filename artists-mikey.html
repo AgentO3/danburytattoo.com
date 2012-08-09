@@ -1,0 +1,172 @@
+<!DOCTYPE HTML>
+<html>
+	<head>
+		<title>The Artists - Mikey</title>
+		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
+		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+		<script type="text/javascript" src="http://masonry.desandro.com/jquery.masonry.min.js"></script>
+		<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-modal.js"></script>
+
+		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
+
+		<style>
+			.item {
+				float: left;
+				width: 135px;
+			}
+			h1 {
+				font-family: 'Mr De Haviland', cursive;
+				font-size: 50px;
+				margin-bottom: 25px;
+			}
+			.bioimg {
+				margin-bottom: 25px;
+			}
+			.container {
+				margin-top: 50px;
+			}
+			.item-img {
+				cursor: pointer;
+			}
+			.left {
+				float: left;
+			}
+			#nextpage {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<div class="row">
+				<div class="span3">
+					<h1>Mikey Vee</h1>
+					<img class="bioimg" src="assets/img/mikey.jpg" />
+					<p>
+						Michael Vavolizza,  aka Mikey Vee.,  was born and raised in the Bronx and  always gravitated toward the world of graffiti thanks to his mentor Richie "SEEN"  Mirando.
+					</p>
+					<p>
+						He apprenticed with SEEN while he was airbrushing t-shirts at the Bronx Flea For All Market.
+						Richie gave him his first tattoo and a passion for the art. He graduated from Fairleigh Dickinson University in 1994 with a BA in Advertising/Marketing. He was a graphic designer in Manhattan for six years then left the creative world behind to work for Verizon, aka the man, to provide stable finances for his family.
+					</p>
+					<p>
+						In 2001 he started tattooing in his apartment as an outlet for his creative side. In  2006 he moved to CT  and started working at a local tattoo shop in Danbury,  were he met Filipe and ET.
+					</p>
+					<p>
+						Who knew 8 years later this trio would open Danbury Tattoo.
+					</p>
+				</div>
+				<div class="span9">
+					<div id="album"></div>
+				</div>
+				<div id="nextpage">
+					26
+				</div>
+			</div>
+		</div>
+
+		<div class="modal hide" id="imgViewer">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">
+					×
+				</button>
+				<h3 class="imgTitle"></h3>
+			</div>
+			<div class="modal-body">
+				<img class="viewerImg" />
+			</div>
+			<div class="modal-footer">
+				<div class="left">
+					<iframe src="http://www.facebook.com/plugins/like.php?href=http%3A%2F%2Fwww.danburytattoo.com&amp;send=false&amp;layout=button_count&amp;width=150&amp;show_faces=false&amp;action=like&amp;colorscheme=light&amp;font&amp;height=21&amp;appId=2522113085" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:150px; height:21px;" allowTransparency="true"></iframe>
+				</div>
+				<div class="left">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-via="twitterapi" data-lang="en">Tweet</a>
+				</div>
+				<div class="left">
+					<div class="g-plusone" data-size="medium" data-annotation="none"></div>
+				</div>
+				<div class="left">
+					<a href="http://pinterest.com/pin/create/button/?url=http%3A%2F%2Fdanburytattoo.com&media=http%3A%2F%2Flh5.ggpht.com%2F-A8dz2s2WRuw%2FUCHpo8FgqZI%2FAAAAAAAAACM%2FICRiUEowiWw%2Fphoto-fixed-19.jpg" class="pin-it-button" count-layout="none"><img border="0" src="http://assets.pinterest.com/images/PinExt.png" title="Pin It" /></a>
+				</div>
+			</div>
+
+		</div>
+		<script>
+			var $container = $('#album');
+
+			$(document).bind('loadAlbum', function(event, s) {
+				var start = s;
+				var results = "25";
+				//var album = "5774153045483068737";
+				var album = "5774155585558864081";
+				var url = 'http://picasaweb.google.com/data/feed/base/user/113373859798527041812/albumid/' + album + '?start-index=' + start + '&max-results=' + results + '&alt=json&callback=?';
+				console.log(url);
+				$.getJSON(url, function(data) {
+					if (data.feed.entry) {
+						$.each(data.feed.entry, function(i, item) {
+							$($container).append('<div class="item"> <img class="item-img" title="' + item.media$group.media$title.$t + '" src="' + item.content.src + '"/>');
+
+						});
+					} else {
+						$('#nextpage').html("done");
+					}
+
+					$container.imagesLoaded(function() {
+						$container.masonry({
+							itemSelector : '.item'
+						});
+					});
+				});
+			});
+
+			$(document).on("click", ".item-img", function() {
+				$('#imgViewer').modal('show');
+				$('.viewerImg').attr('src', $(this).attr('src'));
+				$('.imgTitle').html($(this).attr('title'));
+			});
+
+			$(window).scroll(function() {
+				if ($(window).scrollTop() >= ($(document).height() - $(window).height())) {
+					var indexInterval = 25;
+					var page = $('#nextpage').html();
+					if (page != "done") {
+						$(document).trigger('loadAlbum', [page]);
+						$container.masonry('reload');
+						var index = parseInt(page);
+						var pageNumber = index + indexInterval + 1;
+
+						$('#nextpage').html(pageNumber);
+					}
+				}
+
+			});
+
+			(function() {
+				$(document).trigger('loadAlbum', ["1"]);
+			})();
+
+		</script>
+		<script type="text/javascript">
+			(function() {
+				var po = document.createElement('script');
+				po.type = 'text/javascript';
+				po.async = true;
+				po.src = 'https://apis.google.com/js/plusone.js';
+				var s = document.getElementsByTagName('script')[0];
+				s.parentNode.insertBefore(po, s);
+			})();
+		</script>
+		<script>
+			! function(d, s, id) {
+				var js, fjs = d.getElementsByTagName(s)[0];
+				if (!d.getElementById(id)) {
+					js = d.createElement(s);
+					js.id = id;
+					js.src = "https://platform.twitter.com/widgets.js";
+					fjs.parentNode.insertBefore(js, fjs);
+				}
+			}(document, "script", "twitter-wjs");
+		</script>
+		<script type="text/javascript" src="//assets.pinterest.com/js/pinit.js"></script>
+	</body>
+</html>
