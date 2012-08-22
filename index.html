@@ -6,6 +6,7 @@
 		<link rel="stylesheet" href="http://twitter.github.com/bootstrap/assets/css/bootstrap.css"/>
 		<link rel="stylesheet" href="css/stylesheet.css"/>
 		<link href='http://fonts.googleapis.com/css?family=Mr+De+Haviland' rel='stylesheet' type='text/css'>
+
 		<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
 
 		<style>
@@ -117,6 +118,14 @@
 			h2 {
 				margin-bottom: 10px;
 			}
+			.email-desc {
+				font-size: 20px;
+				font-weight: bold;
+				margin-bottom: 15px;
+			}
+			.newsletter {
+				padding-bottom: 10px;
+			}
 		</style>
 		<script type="text/javascript">
 			var _gaq = _gaq || [];
@@ -149,7 +158,10 @@
 			<p>
 				<img height="325px" src="assets/img/danbury-tattoo-logo.jpg" alt="Danbury Tattoo and Piercing"/>
 			</p>
-			<a class="btn btn-large btn-primary" href="http://eepurl.com/nqPJv" target="_blank"> JOIN OUR MAILING LIST </a>
+			<h2>Book your appointment today!</h2>
+			<a class="btn btn-large btn-primary" href="mailto:info@danburytattoo.com" target="_blank">CALL 203-628-7778 or Email</a>
+
+			<!-- 			<a class="btn btn-large btn-primary" href="http://eepurl.com/nqPJv" target="_blank"> JOIN OUR MAILING LIST </a> -->
 		</div>
 		<div class="center line-top social-buttons">
 			<span class="social-icon"><a href="https://facebook.com/danburytattoo" target="_blank">f</a></span>
@@ -160,7 +172,10 @@
 			<div class="carousel-inner"></div>
 		</div>
 		<div class="clears">
-			<div class="center line-top social-buttons">
+			<div class="center line-top social-buttons newsletter">
+				<span class="email-desc"> Subscribe To Our Newsletter: </span>
+				<input type="text" id="email-txt" value="Enter your email">
+				</input><a id="email-btn" class="btn btn-primary" href="http://click2mail.us4.list-manage1.com/subscribe?u=42fa44f89d9ee7627ecbc9ae7&id=fce54466db&MERGE0=">JOIN</a>
 
 			</div>
 
@@ -180,10 +195,10 @@
 				</div>
 				<div class="span4">
 					<p>
-						Our shop is located in the small group of shops found at the intersection of Germantown Road, Hospital Avenue, and Osborne Street.
+						We are located in the small shopping plaza at the intersection of Germantown Road, Osborne Street, and Hospital Avenue. Our services include tattoos, piercings, tattoo supplies, and body jewelry.
 					</p>
 					<address>
-						2 Germantown road
+						2 Germantown Road
 						<br/>
 						Danbury, CT 06810
 					</address>
@@ -221,7 +236,7 @@
 				</div>
 				<div class="span4 pull-right">
 					<h2>CALL: 203-628-7778</h2>
-					<a class="btn btn-large btn-primary" target="_blank" href="https://maps.google.com/maps?f=q&amp;source=embed&amp;hl=en&amp;geocode=&amp;q=2+Germantown+Rd,+danbury,+ct+06810&amp;aq=&amp;sll=37.0625,-95.677068&amp;sspn=47.569986,63.28125&amp;ie=UTF8&amp;hq=&amp;hnear=2+Germantown+Rd,+Danbury,+Connecticut+06810&amp;t=m&amp;ll=41.412029,-73.436222&amp;spn=0.019311,0.025749&amp;z=14&amp;iwloc=A">Get Directions</a>
+					<a class="btn btn-large btn-primary" target="_blank" href="https://maps.google.com/maps?ie=UTF8&f=d&daddr=Danbury+Tattoo+and+Piercing,+2+Germantown+Rd,+Danbury,+CT+06810&geocode=CcmkLbuZDOuEFRzadwIdsnCf-yHxBviv4Tdejw&gl=US&hl=en">Get Directions</a>
 
 				</div>
 			</div>
@@ -257,6 +272,7 @@
 
 				</div>
 			</div>
+
 			<div class="row">
 				<div class="span12">
 					<div class="center">
@@ -269,6 +285,17 @@
 			</div>
 		</div>
 		<script type="text/javascript" src="http://twitter.github.com/bootstrap/assets/js/bootstrap-carousel.js"></script>
+		<script>
+			$("#email-btn").click(function(e) {
+				e.preventDefault();
+				var link = $(this).attr('href');
+				var email = $('#email-txt').val();
+				window.open(link + email, '_blank');
+			});
+			$('#email-txt').focus(function() {
+				$(this).val("");
+			});
+		</script>
 		<script>
 			if (getParameterByName("show") == 1) {
 				$('.hide').show();
